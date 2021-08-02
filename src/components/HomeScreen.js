@@ -9,6 +9,11 @@ const valuetext = (value) => {
 
 const HomeScreen = (props) => {
 
+    const playAudio = () => {
+        const audioEl = document.getElementsByClassName("audio-element")[0];
+        audioEl.play();
+    };
+
     const [number, setNumber] = useState(6);
 
     const handleChange = (event, newValue) => {
@@ -33,6 +38,7 @@ const HomeScreen = (props) => {
             <Button
                 variant="contained"
                 onClick={() => {
+                    playAudio();
                     props.setInterval(number);
                     props.setScreen("Timer");
                 }}
