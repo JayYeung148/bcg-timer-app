@@ -6,7 +6,7 @@ const TimerScreen = (props) => {
 
     const style = {
         display: 'flex',
-        paddingTop: 50,
+        paddingTop: 30,
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -33,7 +33,7 @@ const TimerScreen = (props) => {
 
     return(
         <div style={style}>
-            <Typography variant="h4">Timer</Typography>
+            <Typography variant="h5">Timer</Typography>
             <Button
                 style={centerStyle}
                 variant="contained"

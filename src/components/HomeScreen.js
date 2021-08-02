@@ -12,7 +12,9 @@ const HomeScreen = (props) => {
 
     const style = {
         display: 'flex',
-        paddingTop: 50,
+        paddingTop: 30,
+        paddingLeft: 20,
+        paddingRight: 20,
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -37,7 +39,7 @@ const HomeScreen = (props) => {
 
     return (
         <div style={style}>
-            <Typography variant="h4">Set timer interval:</Typography>
+            <Typography variant="h5">Set timer interval:</Typography>
             <Slider
                 value={number}
                 onChange={handleChange}
@@ -47,7 +49,7 @@ const HomeScreen = (props) => {
                 step={1}
                 marks
                 min={1}
-                max={12}
+                max={11}
                 valueLabelDisplay="auto"
             />
             <Button
