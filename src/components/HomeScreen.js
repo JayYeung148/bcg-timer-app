@@ -13,8 +13,8 @@ const HomeScreen = (props) => {
     const style = {
         display: 'flex',
         paddingTop: 30,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingLeft: 10,
+        paddingRight: 10,
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -24,6 +24,10 @@ const HomeScreen = (props) => {
     const centerStyle = {
         margin: 0,
         alignSelf: 'center'
+    }
+
+    const sliderStyle = {
+        width: 250
     }
 
     const playAudio = () => {
@@ -39,8 +43,9 @@ const HomeScreen = (props) => {
 
     return (
         <div style={style}>
-            <Typography variant="h5">Set timer interval:</Typography>
+            <Typography variant="h4">Set timer interval:</Typography>
             <Slider
+                style={sliderStyle}
                 value={number}
                 onChange={handleChange}
                 defaultValue={6}
