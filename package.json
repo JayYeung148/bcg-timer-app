@@ -5,7 +5,10 @@
   "author": "Jay Yeung",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --watch"
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod",
+    "build:dev": "webpack --watch --config webpack.dev.js",
+    "build:prod": "webpack --config webpack.prod.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -13,13 +16,16 @@
     "babel-loader": "7.1.1",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
+    "express": "^4.17.1",
     "file-loader": "^6.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rsuite": "^4.10.2",
-    "webpack": "^5.48.0"
+    "webpack": "^5.48.0",
+    "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
-    "webpack-cli": "^4.7.2"
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }
