@@ -2,12 +2,26 @@ import React, {useState} from 'react';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import Button from '@material-ui/core/Button';
+import { flexbox } from '@material-ui/system';
 
 const valuetext = (value) => {
     return `${value} seconds`;
   }
 
 const HomeScreen = (props) => {
+
+    const style = {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 100
+    }
+
+    const centerStyle = {
+        margin: 0,
+        alignSelf: 'center'
+    }
 
     const playAudio = () => {
         const audioEl = document.getElementsByClassName("audio-element")[0];
@@ -21,7 +35,7 @@ const HomeScreen = (props) => {
     }
 
     return (
-        <div>
+        <div style={style}>
             <Typography variant="h4">Set timer interval:</Typography>
             <Slider
                 value={number}
@@ -36,6 +50,7 @@ const HomeScreen = (props) => {
                 valueLabelDisplay="auto"
             />
             <Button
+                style={centerStyle}
                 variant="contained"
                 onClick={() => {
                     playAudio();

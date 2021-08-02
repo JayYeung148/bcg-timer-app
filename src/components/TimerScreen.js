@@ -4,6 +4,19 @@ import Button from '@material-ui/core/Button';
 
 const TimerScreen = (props) => {
 
+    const style = {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 100
+    }
+
+    const centerStyle = {
+        margin: 0,
+        alignSelf: 'center'
+    }
+
     const playAudio = () => {
         const audioEl = document.getElementsByClassName("audio-element")[0];
         audioEl.play();
@@ -18,9 +31,10 @@ const TimerScreen = (props) => {
       }, []);
 
     return(
-        <div>
+        <div style={style}>
             <Typography variant="h4">Timer</Typography>
             <Button
+                style={centerStyle}
                 variant="contained"
                 onClick={() => {props.setScreen("Home")}}
             >
