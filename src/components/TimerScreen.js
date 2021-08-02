@@ -6,10 +6,11 @@ const TimerScreen = (props) => {
 
     const style = {
         display: 'flex',
+        paddingTop: 50,
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        height: 100
+        height: 150
     }
 
     const centerStyle = {
