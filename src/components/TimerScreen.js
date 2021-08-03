@@ -25,17 +25,27 @@ const TimerScreen = (props) => {
         audioEl.play();
     };
 
+    const [progress, setProgress] = useState(props.interval);
+
     useEffect(() => {
         const intervalFunc = setInterval(() => {
-          console.log('TRIGGERED!');
-          playAudio();
+            playAudio();
+            setProgress(props.interval);
         }, props.interval * 1000);
         return () => clearInterval(intervalFunc);
-      }, []);
+    }, []);
+
+    useEffect(() => {
+        const progressInterval = setInterval(() => {
+            setProgress(progress-1);
+        }, 1000);
+        return () => clearInterval(progressInterval);
+    }, [progress]);
 
     return(
         <div style={style}>
             <Typography variant="h4">Timer</Typography>
+            <Typography variant="h4">{progress}</Typography>
             <Button
                 style={centerStyle}
                 variant="contained"

@@ -35,7 +35,7 @@ const HomeScreen = (props) => {
         audioEl.play();
     };
 
-    const [number, setNumber] = useState(6);
+    const [number, setNumber] = useState(props.interval);
 
     const handleChange = (event, newValue) => {
         setNumber(newValue)
@@ -48,7 +48,6 @@ const HomeScreen = (props) => {
                 style={sliderStyle}
                 value={number}
                 onChange={handleChange}
-                defaultValue={6}
                 getAriaValueText={valuetext}
                 aria-labelledby="discrete-slider-small-steps"
                 step={1}

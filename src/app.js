@@ -16,6 +16,7 @@ const App = () => {
                 <HomeScreen 
                     setInterval={setInterval}
                     setScreen={setScreen}
+                    interval={interval}
                 /> : 
                 <TimerScreen
                     interval={interval}
